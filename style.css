@@ -150,20 +150,31 @@ table {
 
 body {
     background-color: var(--primary-color);
+    height: 100%;
 }
 
 main {
-    display: block;
+    display: flex;
+    flex-direction: row;
     margin: 0 auto;
-    width: 50rem;
+    width: 80rem;
+    height: 100vh;
+    gap: 2rem;
+}
+
+main>div:first-child{
+    align-self: center;
 }
 
 .book-card {
+    position: relative;
     display: block;
     width: fit-content;
-    height: 6rem;
+    height: fit-content;
     margin: 0.5rem;
-    padding: 1rem;
+    padding: 1rem 3rem 1rem 1rem;
+
+    flex: 1;
 
     background-color: var(--primary-second-color);
     color: var(--highlighted-color);
@@ -175,8 +186,27 @@ main {
     font-family: 'Playwrite AU SA';
 }
 
+.book-remove-button {
+    position: absolute;
+    width: fit-content;
+    background-color: inherit;
+    margin: 0;
+    right: 1rem;
+    top: 0;
+}
+
 h2 {
     font-size: var(--large-text);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.book-card p {
+    color: var(--highlighted-color);
+    text-shadow: 2px 2px 1px var(--input-forms-color);
+}
+
+.book-card select {
     margin: 1rem 0;
 }
 
@@ -203,30 +233,48 @@ h2 {
     flex-direction: column;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
 button {
-    display: block;
-    margin: 0.5rem auto;
-    width: fit-content;
-    height: 2rem;
-    background-color: var(--input-forms-color);
+    position: relative;
+    margin: 0.5rem;
+    width: 9rem;
+    height: 4rem;
     border: none;
     border-radius: 1rem;
-    font-size: var(--normal-text);
+
+    background-color: var(--input-forms-color);
+    color: var(--primary-color);
+    font-size: var(--large-text);
+
+    cursor: pointer;
 }
 
 input,
 select {
+    display: block;
     background-color: var(--input-forms-color);
     color: var(--primary-color);
     border: none;
     border-radius: 1rem;
     padding: 1rem;
-    height: 1rem;
+    height: 2rem;
+}
+
+select {
+    height: 3rem;
 }
 
 label {
-    margin: 0.5rem 0;
-    font-size: var(--normal-text);
+    margin: 1rem 0;
+    font-size: var(--large-text);
+    color: var(--highlighted-color);
+    text-shadow: 2px 2px 1px var(--input-forms-color);
 }
 
 option {
